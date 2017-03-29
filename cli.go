@@ -7,6 +7,18 @@ import (
 	"time"
 )
 
+/*
+For repeated flags See https://lawlessguy.wordpress.com/2013/07/23/filling-a-slice-using-command-line-flags-in-go-golang/
+
+we could have a per-path depth, ignore, include, but the syntax will be ugly:
+
+-watch './**/* depth=5 exclude=**/*_test.go include=**/*.go include=**/\d\d\_**/*.md exclude=./vendor/**/*'
+
+\d = digit
+\_ = literal space (or could use \x0020)
+
+*/
+
 var (
 	verbose = flag.Bool("v", false, "verbose")
 	depth   = flag.Int("depth", 1, "recursion depth")
