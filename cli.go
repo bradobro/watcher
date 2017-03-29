@@ -17,6 +17,8 @@ we could have a per-path depth, ignore, include, but the syntax will be ugly:
 \d = digit
 \_ = literal space (or could use \x0020)
 
+Use flag setter/string for a custom type watchslice = []watch
+
 */
 
 var (
@@ -25,6 +27,8 @@ var (
 	dir     = flag.String("dir", ".", "directory root to use for watching")
 	quiet   = flag.Duration("quiet", 800*time.Millisecond, "quiet period after command execution")
 	ignore  = flag.String("ignore", "", "path ignore pattern")
+	// command
+	// process
 )
 
 func usage() {
